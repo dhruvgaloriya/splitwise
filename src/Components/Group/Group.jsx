@@ -12,7 +12,7 @@ class Group extends React.Component {
       <div>
         <div className="menu">
           <h1>{clickedGroup.nameOfGroup}</h1>
-          <Link className="exitBtn" to="/dashboard"></Link>
+          <Link className="exitBtn" to="/dashboard">Back</Link>
         </div>
         <div className="groupDashboard">
           <PeopleList clickedGroup={clickedGroup} />

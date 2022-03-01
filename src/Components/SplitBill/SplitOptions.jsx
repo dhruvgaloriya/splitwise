@@ -6,20 +6,20 @@ class SplitOptions extends React.Component {
     super(props);
     this.state = {
       chosedOption: "Add to group",
-      checkedGroup: ""
+      checkedGroup: "",
     };
   }
   handleChange = (e) => {
     this.setState(
       {
-        chosedOption: e.target.value
+        chosedOption: e.target.value,
       },
       () => {
         this.props.arrayOfGroups.forEach((group) => {
           if (group.nameOfGroup === this.state.chosedOption) {
             this.setState(
               {
-                checkedGroup: group
+                checkedGroup: group,
               },
               () => {
                 this.props.checkOption(this.state.checkedGroup);

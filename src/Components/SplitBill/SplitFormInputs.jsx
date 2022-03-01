@@ -6,7 +6,7 @@ class SplitFormInputs extends React.Component {
     super(props);
     this.state = {
       nameBill: "",
-      total: ""
+      total: "",
     };
   }
   handleFormInputs = (e) => {
@@ -15,7 +15,7 @@ class SplitFormInputs extends React.Component {
         [e.target.name]:
           e.target.type === "number"
             ? Math.round(e.target.value * 100) / 100
-            : e.target.value
+            : e.target.value,
       },
       () => {
         this.props.onHandleFormInputs(this.state.nameBill, this.state.total);
@@ -32,19 +32,17 @@ class SplitFormInputs extends React.Component {
           name="nameBill"
           value={this.state.nameBill}
           placeholder="Name of the bill"
-          className="form-control" 
+          className="form-control"
           onChange={(e) => this.handleFormInputs(e)}
         />
 
         <input
           type="number"
-          step="0.01"
-          min="0"
           name="total"
           value={this.state.total}
           required
           placeholder="Total sum"
-          className="form-control" 
+          className="form-control"
           onChange={(e) => this.handleFormInputs(e)}
         />
       </div>

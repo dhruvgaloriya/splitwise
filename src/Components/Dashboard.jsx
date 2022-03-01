@@ -9,13 +9,13 @@ class Dashboard extends React.Component {
     super(props);
     this.state = {
       clickedGroup: "",
-      clickedIndx: 0
+      clickedIndx: 0,
     };
   }
   onHandleClickedGroup = (clickedGroup, clickedIndx) => {
     this.setState({
       clickedGroup: clickedGroup,
-      clickedIndx: clickedIndx
+      clickedIndx: clickedIndx,
     });
   };
   render() {
@@ -44,8 +44,9 @@ class Dashboard extends React.Component {
           )}
         ></Route>
         <div className="footer">
-          <Link className="addBillBtn" to="/split">Add your bills</Link>
-          <button/>
+          <Link className="addBillBtn" to="/split">
+            Add your bills
+          </Link>
         </div>
       </div>
     );

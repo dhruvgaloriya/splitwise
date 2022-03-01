@@ -11,34 +11,38 @@ export class SplitForm extends React.Component {
       nameBill: "",
       total: "",
       debts: this.props.debts,
-      paidBy: ""
+      paidBy: "",
     };
   }
   onHandleFormInputs = (nameBill, total) => {
     this.setState({
       nameBill: nameBill,
-      total: total
+      total: total,
     });
   };
 
   updateBillInfo = (e) => {
-    this.props.updateNewInfoBill(
-      this.state.debts,
-      this.state.nameBill,
-      this.state.total,
-      this.state.paidBy
-    );
+    if (this.state.nameBill && this.state.total) {
+      this.props.updateNewInfoBill(
+        this.state.debts,
+        this.state.nameBill,
+        this.state.total,
+        this.state.paidBy
+      );
+    } else {
+      alert("please add name of bill and total");
+    }
   };
   updateNewDebts = (newDebts, paidBy) => {
     this.setState({
       debts: newDebts,
-      paidBy: paidBy
+      paidBy: paidBy,
     });
   };
 
   render() {
     return (
-      <form className="splitForm">
+      <form className="splitForm d-flex">
         <SplitFormInputs
           checkedOption={this.props.checkedOption}
           onHandleFormInputs={this.onHandleFormInputs}
@@ -51,11 +55,15 @@ export class SplitForm extends React.Component {
             updateNewDebts={this.updateNewDebts}
           />
         )}
-        <Link
-          className="addBillBtn"
-          to="/dashboard"
-          onClick={(e) => this.updateBillInfo(e)}
-        >Submit Bill</Link>
+        <div>
+          <Link
+            className="addBillBtn"
+            to="/dashboard"
+            onClick={(e) => this.updateBillInfo(e)}
+          >
+            Submit Bill
+          </Link>
+        </div>
       </form>
     );
   }

@@ -5,6 +5,7 @@ import SplitBill from "./Components/SplitBill/SplitBill.jsx";
 import Dashboard from "./Components/Dashboard.jsx";
 import AddGroup from "./Components/AddGroup/AddGroup.jsx";
 import "./sass/styles.scss";
+import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 class App extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class App extends React.Component {
   ) => {
     console.log(newDebts, nameOfCheckedGroup);
     let groups = this.state.arrayOfGroups;
+    console.log(groups)
     let checkedGroupIndx = groups.findIndex(
       (group) => group.nameOfGroup === nameOfCheckedGroup
     );
@@ -47,7 +49,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route
@@ -73,7 +75,7 @@ class App extends React.Component {
             )}
           ></Route>
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }

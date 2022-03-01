@@ -5,47 +5,42 @@ class SplitPeople extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedRadio: "",
+      selectedRadio: "equally",
       debts: this.props.debts,
-      paidBy: ""
+      paidBy: "",
     };
   }
 
   handleRadioBtn = (e) => {
+    console.log(e);
     this.setState(
       {
-        selectedRadio: e.target.value
+        selectedRadio: e.target.value,
+        paidBy: this.props.checkedGroup.people[0],
       },
       () => {
+        console.log(this.state);
         if (this.state.selectedRadio === "equally") {
+          let debts = this.state.debts;
+          console.log(debts);
+          for (let i = 0; i < debts.length; i++) {
+            if (debts[i].name === this.state.paidBy) {
+              debts[i].debt = this.props.total;
+            } else {
+              debts[i].debt = 0;
+            }
+          }
+          this.setState(
+            {
+              debts: debts,
+              paidBy: this.state.paidBy,
+            },
+            () => this.props.updateNewDebts(this.state.debts, this.state.paidBy)
+          );
           this.handlePaidBy = (e) => {
-            this.setState(
-              {
-                paidBy: e.target.value
-              },
-              () => {
-                let debts = this.state.debts;
-                console.log(debts);
-                for (let i = 0; i < debts.length; i++) {
-                  if (debts[i].name === this.state.paidBy) {
-                    debts[i].debt = this.props.total;
-                  } else {
-                    debts[i].debt = 0;
-                  }
-                }
-                this.setState(
-                  {
-                    debts: debts,
-                    paidBy: this.state.paidBy
-                  },
-                  () =>
-                    this.props.updateNewDebts(
-                      this.state.debts,
-                      this.state.paidBy
-                    )
-                );
-              }
-            );
+            this.setState({
+              paidBy: e.target.value,
+            });
           };
         } else if (this.state.selectedRadio === "unequally") {
           this.handleDebts = (e, indx) => {
@@ -56,25 +51,20 @@ class SplitPeople extends React.Component {
             this.setState(
               {
                 debts: newDebts,
-                paidBy: "Shared"
+                paidBy: "Shared",
               },
               () =>
                 this.props.updateNewDebts(this.state.debts, this.state.paidBy)
             );
           };
-          //				this.setState ({
-          //					paidBy: "Shared"
-          //				})
         }
-        //		this.props.updateNewDebts(this.state.debts, this.state.paidBy);
-        //			console.log(this.state.debts, this.state.paidBy);
       }
     );
   };
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      debts: nextProps.debts
+      debts: nextProps.debts,
     });
   }
 
@@ -82,32 +72,37 @@ class SplitPeople extends React.Component {
     return (
       <div className="splitBox">
         <div className="splitInputs">
-        <div className="custom-control custom-radio custom-control-inline">
-          <input
-            id="equally"
-            type="radio"
-            value="equally"
-            className="custom-control-input"
-            onChange={(e) => {
-              this.handleRadioBtn(e);
-            }}
-            checked={this.state.selectedRadio === "equally"}
-          />
-          <label htmlFor="equally" className="custom-control-label">Equally</label>
-        </div>
-        <div className="custom-control custom-radio custom-control-inline">
-          <input
-            id="unequally"
-            type="radio"
-            value="unequally"
-            className="custom-control-input"
-            onChange={(e) => {
-              this.handleRadioBtn(e);
-            }}
-            checked={this.state.selectedRadio === "unequally"}
-          />
-          <label htmlFor="unequally" className="custom-control-label">Unequally</label>
-        </div>
+          <div className="custom-control custom-radio custom-control-inline">
+            <input
+              id="equally"
+              type="radio"
+              value="equally"
+              className="custom-control-input"
+              onChange={(e) => {
+                this.handleRadioBtn(e);
+              }}
+              checked={this.state.selectedRadio === "equally"}
+            />
+            <label htmlFor="equally" className="custom-control-label">
+              Equally
+            </label>
+          </div>
+          <div></div>
+          <div className="custom-control custom-radio custom-control-inline">
+            <input
+              id="unequally"
+              type="radio"
+              value="unequally"
+              className="custom-control-input"
+              onChange={(e) => {
+                this.handleRadioBtn(e);
+              }}
+              checked={this.state.selectedRadio === "unequally"}
+            />
+            <label htmlFor="unequally" className="custom-control-label">
+              Unequally
+            </label>
+          </div>
         </div>
         <div className="form-group">
           <label>Paid By</label>

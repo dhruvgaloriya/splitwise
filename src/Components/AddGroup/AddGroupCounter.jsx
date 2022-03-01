@@ -12,6 +12,7 @@ class AddGroupCounter extends React.Component {
   }
 
   handleSpan = (e) => {
+    e.preventDefault()
     let tempArr = this.state.array;
     if (e.currentTarget.innerText === "+") {
       this.setState(

@@ -6,24 +6,6 @@
 		font-size: 0.85rem;
 		font-weight: 900;
 	}
-	.people {
-		padding-bottom: 1rem;
-		ul {
-			display: flex;
-			justify-content: center;
-			li {
-				min-width: 2.7rem;
-				height: 2.7rem;
-				border-radius: 50%;
-				border: 1px solid white;
-				background-color: rgba($color-grey, 0.1);
-				text-align: center;
-				line-height: 2.7rem;
-				margin: 0.2rem;
-				color: white;
-			}
-		}
-	}
 
 	.owesBox {
 		width: 100%;
@@ -33,51 +15,11 @@
 		background-color: white;
 		border-radius: 5px;
 		box-shadow: 2px 2px 10px 0 dimgrey;
-		h2 {
+		h1 {
 			margin-bottom: 1rem;
 			color: dimgrey;
 			text-align: center;
 			
-		}
-		.balanceBox {
-			display: flex;
-			justify-content: space-between;
-
-			li {
-				width: 100%;
-				margin-bottom: 0.3rem;
-				padding: 0.2rem;
-				height: auto;
-				color: dimgrey;
-				border: 1px solid dimgrey;
-				text-align: center;
-				background-color: rgba($color-grey, 0.2);
-				border-radius: 5px;
-				position: relative;
-				span {
-					margin-left: 0.3rem;
-				}
-
-			}	
-			.owners {
-				li {
-					&:after {
-					content: "";
-					display: block;
-					width: 3rem;
-					height: 1px;
-					background-color: dimgrey;
-					position: absolute;
-					left: 100%;
-					top: 50%;
-					}
-					&:before {
-					content: "";
-					display: block;
-				
-					}
-				}
-			}	
 		}
 	}
 
@@ -97,38 +39,9 @@
 			margin-top: 0.6rem;
 			border-radius: 5px;
 			font-size: 0.75rem;
-			color: dimgrey;
+			color: white;
 			font-weight: 600;
 			box-shadow: 2px 2px 10px 0 dimgrey;
-			li {
-				text-transform: uppercase;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-	
-				div {
-					width: 50%;
-					display: flex;
-					justify-content: flex-end;
-				}
-				span {
-				
-					text-transform: lowercase;	
-
-				}
-				.paidBy {
-					margin-left: 0.5rem;
-					width: 50%;
-					height: 1rem;
-					border: 1px solid dimgrey;
-					border-radius: 5px;
-					display: flex;
-					justify-content: center;
-					text-transform: uppercase;
-					padding: 1px;
-		
-				}
-			}
 		}
 	}
 

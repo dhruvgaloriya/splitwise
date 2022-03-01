@@ -8,7 +8,7 @@ class OwesBox extends React.Component {
       lenders: [],
       owners: [],
       totalAmount: 0,
-      average: 0
+      average: 0,
     };
   }
 
@@ -40,18 +40,18 @@ class OwesBox extends React.Component {
       tempObject[elem].debt < 0 &&
         owners.push({
           name: tempObject[elem].name,
-          debt: Math.round(tempObject[elem].debt * 100) / 100
+          debt: Math.round(tempObject[elem].debt * 100) / 100,
         });
       tempObject[elem].debt > 0 &&
         lenders.push({
           name: tempObject[elem].name,
-          debt: Math.round(tempObject[elem].debt * 100) / 100
+          debt: Math.round(tempObject[elem].debt * 100) / 100,
         });
     }
 
     this.setState({
       owners: owners,
-      lenders: lenders
+      lenders: lenders,
     });
 
     console.log(owners, lenders);
@@ -75,7 +75,7 @@ class OwesBox extends React.Component {
       this.setState(
         {
           average: parseFloat(average),
-          totalAmount: parseFloat(totalAmount)
+          totalAmount: parseFloat(totalAmount),
         },
         () => {
           this.updatingBalanceDebts();
@@ -89,28 +89,37 @@ class OwesBox extends React.Component {
   }
 
   render() {
-
     return (
-    <div className="owesBox">
-        <h2>who owes who</h2>
-        <div className="balanceBox">
-          <ul className="owners">
+      <div className="owesBox">
+        <h1>who owes who</h1>
+        <div className="d-flex justify-content-between">
+          <div>
             {this.state.owners.map((elem, index) => (
-              <li key={index}>
-                {elem.name}
-                <span>{elem.debt}</span>
-              </li>
+              <button type="button" className="btn btn-primary m-1" key={index}>
+                {elem.name}{" "}
+                <span
+                  className="badge badge-secondary"
+                  style={{ backgroundColor: "grey" }}
+                >
+                  {elem.debt}&#8377;
+                </span>
+              </button>
             ))}
-          </ul>
+          </div>
 
-          <ul className="lenders">
+          <div>
             {this.state.lenders.map((elem, index) => (
-              <li key={index}>
-                {elem.name}
-                <span>{elem.debt}</span>
-              </li>
+              <button type="button" className="btn btn-primary m-1" key={index}>
+                {elem.name}{" "}
+                <span
+                  className="badge badge-secondary"
+                  style={{ backgroundColor: "grey" }}
+                >
+                  {elem.debt}&#8377;
+                </span>
+              </button>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     );

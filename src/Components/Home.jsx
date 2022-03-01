@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 class Home extends React.Component {
   render() {
     return (
-      <div className="mainBox">
-        <h1>
-          Easy split bills <br /> with your friends
+      <div className="d-flex align-items-center justify-content-center flex-column">
+        <h1 class="display-1">
+          Split Your Bills
         </h1>
-        <Link className="navigation" to="/add">
+        <Link className="addGroupBtn" to="/add">
           Add group
         </Link>
-        <Link className="navigation" to="/dashboard">
+        <Link className="addGroupBtn" to="/dashboard">
           Choose group
         </Link>
-        <Link className="navigation splitButton" to="/split">
+        <Link className="addGroupBtn" to="/split">
           Split bill
         </Link>
       </div>

@@ -11,14 +11,14 @@ class SplitBill extends React.Component {
       groups: this.props.arrayOfGroups,
       checkedOption: null,
       checkedGroup: "",
-      debts: []
+      debts: [],
     };
   }
 
   checkOption = (checked) => {
     this.setState(
       {
-        checkedGroup: checked
+        checkedGroup: checked,
       },
       () => {
         this.updatingDebtsName();
@@ -32,22 +32,26 @@ class SplitBill extends React.Component {
     for (let i = 0; i < names.length; i++) {
       debts.push({
         name: names[i],
-        debt: 0
+        debt: 0,
       });
     }
     this.setState({
-      debts: debts
+      debts: debts,
     });
   };
 
   updateNewInfoBill = (newDebts, nameBill, total, paidBy) => {
-    this.props.updateNewInfoBill(
-      newDebts,
-      nameBill,
-      total,
-      paidBy,
-      this.state.checkedGroup.nameOfGroup
-    );
+    if (this.state.checkedGroup.nameOfGroup) {
+      this.props.updateNewInfoBill(
+        newDebts,
+        nameBill,
+        total,
+        paidBy,
+        this.state.checkedGroup.nameOfGroup
+      );
+    } else {
+      alert("please select your relevent group");
+    }
   };
 
   render() {
@@ -55,7 +59,9 @@ class SplitBill extends React.Component {
       <div>
         <div className="menu">
           <h1>Split bill</h1>
-          <Link className="exitBtn" to="/dashboard"></Link>
+          <Link className="exitBtn" to="/dashboard">
+            Back
+          </Link>
         </div>
         <div className="splitBill">
           <SplitOptions

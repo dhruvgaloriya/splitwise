@@ -8,22 +8,27 @@ class AddGroup extends React.Component {
     super(props);
     this.state = {
       names: [""],
-      nameOfGroup: ""
+      nameOfGroup: "",
     };
   }
+
   updateGroupName = (e) => {
     this.setState({
-      nameOfGroup: e.target.value
+      nameOfGroup: e.target.value,
     });
   };
 
   updateGroupInfo = (e) => {
     e.stopPropagation();
-    this.props.onUpdateGroupInfo(this.state.nameOfGroup, this.state.names);
+    if (this.state.nameOfGroup && this.state.names.length) {
+      this.props.onUpdateGroupInfo(this.state.nameOfGroup, this.state.names);
+    } else {
+      alert("please enter group name and names");
+    }
   };
   updateMembersNames = (names) => {
     this.setState({
-      names: names
+      names: names,
     });
   };
   render() {
@@ -31,13 +36,15 @@ class AddGroup extends React.Component {
       <div className="addGroup">
         <div className="menu">
           <h1>Add group</h1>
-          <Link className="exitBtn" to="/dashboard"></Link>
+          <Link className="exitBtn" to="/dashboard">
+            Back
+          </Link>
         </div>
         <div className="addGroupBox">
           <form>
             <input
               id="nameOfGroup"
-              className="form-control" 
+              className="form-control"
               type="text"
               placeholder="Name of the group"
               value={this.state.nameOfGroup}
@@ -48,7 +55,9 @@ class AddGroup extends React.Component {
               className="addGroupBtn"
               to="/dashboard"
               onClick={(e) => this.updateGroupInfo(e)}
-            >Update Your Group</Link>
+            >
+              Update Your Group
+            </Link>
           </form>
         </div>
       </div>

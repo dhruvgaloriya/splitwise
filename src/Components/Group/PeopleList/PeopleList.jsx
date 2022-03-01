@@ -1,17 +1,14 @@
 import React from "react";
-import "../../../sass/styles.scss";
-
 class PeopleList extends React.Component {
   render() {
     const { clickedGroup } = this.props;
     console.log(clickedGroup)
     return (
-      <div className="people">
-        <ul>
-          {clickedGroup.people.map((name, indx) => (
-            <li key={indx}>{name}</li>
-          ))}
-        </ul>
+      <div className="d-flex justify-content-center align-items-center">
+        <h1>Group Members</h1>
+        {clickedGroup.people.map((name, indx) => (
+          <button type="button" key={indx} class="btn btn-primary m-2" disabled>{name}</button>
+        ))}
       </div>
     );
   }

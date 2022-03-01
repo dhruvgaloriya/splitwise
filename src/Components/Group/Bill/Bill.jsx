@@ -4,17 +4,16 @@ import "../../../sass/styles.scss";
 class Bill extends React.Component {
   render() {
     return (
-      <ul className="bill">
-        <li>
-          {this.props.name} TOTAL: {this.props.total}
-          <div>
-            <p>paid by</p>
-            <div className="paidBy">
-              <p>{this.props.paidBy}</p>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <div className="bill">
+        <div className="d-flex justify-content-between">
+          <button type="button" className="btn btn-warning m-1">
+            {this.props.name} Total: <span className="badge badge-secondary" style={{backgroundColor:"grey"}}>{this.props.total}&#8377;</span>
+          </button>
+          <button type="button" className="btn btn-warning m-1">
+            Paid By: <span className="badge badge-secondary" style={{backgroundColor:"grey"}}>{this.props.paidBy}</span>
+          </button>
+        </div>
+      </div>
     );
   }
 }
