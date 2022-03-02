@@ -59,6 +59,9 @@ class SplitBill extends React.Component {
       <div>
         <div className="menu">
           <h1>Split bill</h1>
+          <Link className="exitBtn" to="/">
+            Home
+          </Link>
           <Link className="exitBtn" to="/dashboard">
             Back
           </Link>

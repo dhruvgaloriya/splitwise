@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from "./Components/Home.jsx";
 import SplitBill from "./Components/SplitBill/SplitBill.jsx";
 import Dashboard from "./Components/Dashboard.jsx";

@@ -1,51 +1,43 @@
 .groupDashboard {
-	height: 80vh;
-	padding: 0 2rem;
-	h2 {
-		text-transform: uppercase;
-		font-size: 0.85rem;
-		font-weight: 900;
-	}
-
-	.owesBox {
-		width: 100%;
-		height: auto;
-		border: 1px solid white;
-		padding: 0.6rem 1rem;
-		background-color: white;
-		border-radius: 5px;
-		box-shadow: 2px 2px 10px 0 dimgrey;
-		h1 {
-			margin-bottom: 1rem;
-			color: dimgrey;
-			text-align: center;
-			
-		}
-	}
-
-	
-	.billList {
-		width: 100%;
-		h2 {
-			text-align: center;
-			font-size: 1rem;
-			margin: 1rem 0;
-			color: white;
-		}
-		.bill {
-			width: 100%;
-			background-color: white;
-			padding: 0.5rem;
-			margin-top: 0.6rem;
-			border-radius: 5px;
-			font-size: 0.75rem;
-			color: white;
-			font-weight: 600;
-			box-shadow: 2px 2px 10px 0 dimgrey;
-		}
-	}
-
-
-
-
+  height: 80vh;
+  padding: 0 2rem;
+  h2 {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 900;
+  }
+  .owesBox {
+    width: 100%;
+    height: auto;
+    border: 1px solid white;
+    padding: 0.6rem 1rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px 0 dimgrey;
+    h1 {
+      margin-bottom: 1rem;
+      color: dimgrey;
+      text-align: center;
+    }
+  }
+  .billList {
+    width: 100%;
+    h2 {
+      text-align: center;
+      font-size: 1rem;
+      margin: 1rem 0;
+      color: white;
+    }
+    .bill {
+      width: 100%;
+      background-color: white;
+      padding: 0.5rem;
+      margin-top: 0.6rem;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      color: white;
+      font-weight: 600;
+      box-shadow: 2px 2px 10px 0 dimgrey;
+    }
+  }
 }

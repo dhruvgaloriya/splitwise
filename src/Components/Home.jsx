@@ -5,9 +5,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="d-flex align-items-center justify-content-center flex-column">
-        <h1 class="display-1">
-          Split Your Bills
-        </h1>
+        <h1 className="display-1">Split Your Bills</h1>
         <Link className="addGroupBtn" to="/add">
           Add group
         </Link>

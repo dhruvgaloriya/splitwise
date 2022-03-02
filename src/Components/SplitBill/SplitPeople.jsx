@@ -5,7 +5,7 @@ class SplitPeople extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedRadio: "equally",
+      selectedRadio: "",
       debts: this.props.debts,
       paidBy: "",
     };
@@ -63,6 +63,7 @@ class SplitPeople extends React.Component {
   };
 
   componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
     this.setState({
       debts: nextProps.debts,
     });

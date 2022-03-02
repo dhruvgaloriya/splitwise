@@ -13,6 +13,9 @@ class Groups extends React.Component {
       <div>
         <div className="menu">
           <h1>All groups</h1>
+          <Link className="exitBtn" to="/">
+            Home
+          </Link>
         </div>
         {/* <button className="btn btn-warning">
           <Link to="/">Home</Link>

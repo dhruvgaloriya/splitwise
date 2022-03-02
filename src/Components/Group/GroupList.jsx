@@ -1,11 +1,12 @@
 import React from "react";
 import "../../sass/styles.scss";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class GroupList extends React.Component {
   handleClickedGroup = (e, indx, group) => {
     e.preventDefault();
     this.props.onHandleClickedGroup(group, indx);
+    this.props.history.push(`dashboard/${indx}`);
   };
   render() {
     return (
@@ -15,16 +16,15 @@ class GroupList extends React.Component {
             key={group.nameOfGroup}
             onClick={(e) => this.handleClickedGroup(e, indx, group)}
           >
-            <Link className="linkStyle" to={`dashboard/${indx}`}>
-              {group.nameOfGroup}
-            </Link>
-            <i className="far fa-trash-alt"></i>
+            <span className="linkStyle">{group.nameOfGroup}</span>
           </li>
         ))}
-        <Link className="addGroupBtn" to="/add">Add Your Group</Link>
+        <Link className="addGroupBtn" to="/add">
+          Add Your Group
+        </Link>
       </ul>
     );
   }
 }
 
-export default GroupList;
+export default withRouter(GroupList);
