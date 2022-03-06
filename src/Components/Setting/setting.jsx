@@ -8,7 +8,6 @@ class DarkMode extends React.Component {
   };
 
   componentDidMount() {
-    console.log("I am load");
     let isDark = localStorage.getItem("theme", "dark");
     if (isDark === "dark") {
       this.setState(
