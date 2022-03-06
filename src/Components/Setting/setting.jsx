@@ -62,7 +62,7 @@ class DarkMode extends React.Component {
         <div className="menu">
           <h1>Choose Your Theme</h1>
           <Link className="exitBtn" to="/">
-            Home {this.state.isDark}
+            Home
           </Link>
         </div>
         <div className="toggle-box">
