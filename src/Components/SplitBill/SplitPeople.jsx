@@ -11,8 +11,59 @@ class SplitPeople extends React.Component {
     };
   }
 
+  // handleRadioBtn = (e) => {
+  //   console.log(e);
+  //   this.setState(
+  //     {
+  //       selectedRadio: e.target.value,
+  //       paidBy: this.props.checkedGroup.people[0],
+  //     },
+  //     () => {
+  //       console.log(this.state);
+  //       if (this.state.selectedRadio === "equally") {
+  //         let debts = this.state.debts;
+  //         console.log(debts);
+  //         for (let i = 0; i < debts.length; i++) {
+  //           if (debts[i].name === this.state.paidBy) {
+  //             debts[i].debt = this.props.total;
+  //           } else {
+  //             debts[i].debt = 0;
+  //           }
+  //         }
+  //         this.setState(
+  //           {
+  //             debts: debts,
+  //             paidBy: this.state.paidBy,
+  //           },
+  //           () => this.props.updateNewDebts(this.state.debts, this.state.paidBy)
+  //         );
+  //         this.handlePaidBy = (e) => {
+  //           this.setState({
+  //             paidBy: e.target.value,
+  //           });
+  //         };
+  //       } else if (this.state.selectedRadio === "unequally") {
+  //         this.handleDebts = (e, indx) => {
+  //           let thisContribution = e.target.dataset.indx;
+  //           let newDebts = [...this.state.debts];
+  //           newDebts[thisContribution].debt =
+  //             Math.round(e.target.value * 100) / 100;
+  //           this.setState(
+  //             {
+  //               debts: newDebts,
+  //               paidBy: "Shared",
+  //             },
+  //             () =>
+  //               this.props.updateNewDebts(this.state.debts, this.state.paidBy)
+  //           );
+  //         };
+  //       }
+  //     }
+  //   );
+  // };
+
   handleRadioBtn = (e) => {
-    console.log(e);
+    console.log(this.props.checkedGroup.people[0]);
     this.setState(
       {
         selectedRadio: e.target.value,
@@ -21,26 +72,34 @@ class SplitPeople extends React.Component {
       () => {
         console.log(this.state);
         if (this.state.selectedRadio === "equally") {
-          let debts = this.state.debts;
-          console.log(debts);
-          for (let i = 0; i < debts.length; i++) {
-            if (debts[i].name === this.state.paidBy) {
-              debts[i].debt = this.props.total;
-            } else {
-              debts[i].debt = 0;
-            }
-          }
-          this.setState(
-            {
-              debts: debts,
-              paidBy: this.state.paidBy,
-            },
-            () => this.props.updateNewDebts(this.state.debts, this.state.paidBy)
-          );
           this.handlePaidBy = (e) => {
-            this.setState({
-              paidBy: e.target.value,
-            });
+            this.setState(
+              {
+                paidBy: e.target.value,
+              },
+              () => {
+                let debts = this.state.debts;
+                console.log(debts);
+                for (let i = 0; i < debts.length; i++) {
+                  if (debts[i].name === this.state.paidBy) {
+                    debts[i].debt = this.props.total;
+                  } else {
+                    debts[i].debt = 0;
+                  }
+                }
+                this.setState(
+                  {
+                    debts: debts,
+                    paidBy: this.state.paidBy,
+                  },
+                  () =>
+                    this.props.updateNewDebts(
+                      this.state.debts,
+                      this.state.paidBy
+                    )
+                );
+              }
+            );
           };
         } else if (this.state.selectedRadio === "unequally") {
           this.handleDebts = (e, indx) => {

@@ -15,6 +15,9 @@ class Home extends React.Component {
         <Link className="addGroupBtn" to="/split">
           Split bill
         </Link>
+        <Link className="addGroupBtn" to="/setting">
+          Setting
+        </Link>
       </div>
     );
   }

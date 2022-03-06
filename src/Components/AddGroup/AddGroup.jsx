@@ -39,6 +39,9 @@ class AddGroup extends React.Component {
           <Link className="exitBtn" to="/">
             Home
           </Link>
+          <Link className="addGroupBtn" to="/setting">
+            Setting
+          </Link>
           <Link className="exitBtn" to="/dashboard">
             Back
           </Link>

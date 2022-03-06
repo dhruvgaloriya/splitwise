@@ -6,6 +6,7 @@ import Dashboard from "./Components/Dashboard.jsx";
 import AddGroup from "./Components/AddGroup/AddGroup.jsx";
 import "./sass/styles.scss";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
+import Setting from "./Components/Setting/setting.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +14,18 @@ class App extends React.Component {
     this.state = {
       arrayOfGroups: []
     };
+  }
+
+  componentDidMount(){
+    let isDark = localStorage.getItem("theme", "dark");
+    if(isDark === "dark"){
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    }else{
+      document.documentElement.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
+    }
+    
   }
 
   onUpdateGroupInfo = (nameOfGroup, names) => {
@@ -72,6 +85,12 @@ class App extends React.Component {
                 arrayOfGroups={this.state.arrayOfGroups}
                 updateNewInfoBill={this.onUpdateNewInfoBill}
               />
+            )}
+          ></Route>
+          <Route
+            path="/setting"
+            render={() => (
+              <Setting/>
             )}
           ></Route>
         </Switch>
