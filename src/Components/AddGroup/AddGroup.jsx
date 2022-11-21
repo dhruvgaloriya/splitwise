@@ -35,7 +35,7 @@ class AddGroup extends React.Component {
     return (
       <div className="addGroup">
         <div className="menu">
-          <h4>Add group</h4>
+          <h5>Add group</h5>
           <Link className="exitBtn" to="/">
             Home
           </Link>
