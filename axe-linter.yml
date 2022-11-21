@@ -1,0 +1,6 @@
+rules:
+  accessibility-rule: false # turn off rule
+  another-accessibility-rule: true # turn on rule
+tags:
+  - wcag2a # Disable all rules for WCAG 2.0 level A
+  - wcag21a # Disable all rules for WCAG 2.1 level A
