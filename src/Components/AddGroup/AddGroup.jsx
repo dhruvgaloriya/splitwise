@@ -37,6 +37,7 @@ class AddGroup extends React.Component {
         <div className="menu">
           <h5>Add group</h5>
           <div role="myRole">This div has a wrong rule</div>
+          <input tabIndex="-1"></input>
           <Link className="exitBtn" to="/">
             Home
           </Link>
