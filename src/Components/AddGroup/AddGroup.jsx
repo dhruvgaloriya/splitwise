@@ -37,6 +37,7 @@ class AddGroup extends React.Component {
         <div className="menu">
           <h1>Add group</h1>
           <img src="https://facebook.com" tabIndex={-2} />
+          <img src="https://facebook.com" tabIndex={-1} />
           <Link className="exitBtn" to="/">
             Home
           </Link>
