@@ -1,6 +1,6 @@
 import React from "react";
-import "../../sass/styles.scss";
 import { Link } from "react-router-dom";
+import "../../sass/styles.scss";
 import AddGroupCounter from "./AddGroupCounter";
 
 class AddGroup extends React.Component {
@@ -35,7 +35,9 @@ class AddGroup extends React.Component {
     return (
       <div className="addGroup">
         <div className="menu">
-          <h1>Add group</h1>
+          <h5>Add group</h5>
+          <div role="button"> nice This div has a wrong rule</div>
+          <input tabIndex="-1"></input>
           <Link className="exitBtn" to="/">
             Home
           </Link>
