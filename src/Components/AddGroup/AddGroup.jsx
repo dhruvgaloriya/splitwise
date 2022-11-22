@@ -1,6 +1,6 @@
 import React from "react";
-import "../../sass/styles.scss";
 import { Link } from "react-router-dom";
+import "../../sass/styles.scss";
 import AddGroupCounter from "./AddGroupCounter";
 
 class AddGroup extends React.Component {
@@ -36,6 +36,7 @@ class AddGroup extends React.Component {
       <div className="addGroup">
         <div className="menu">
           <h1>Add group</h1>
+          <img src="https://facebook.com" tabIndex={-1} />
           <Link className="exitBtn" to="/">
             Home
           </Link>
