@@ -17,6 +17,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.log("Hello");
     let isDark = localStorage.getItem("theme", "dark");
     if (isDark === "dark") {
       document.documentElement.setAttribute("data-theme", "dark");
