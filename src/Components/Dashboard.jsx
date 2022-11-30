@@ -17,6 +17,7 @@ class Dashboard extends React.Component {
       clickedGroup: clickedGroup,
       clickedIndx: clickedIndx,
     });
+    console.log("Hello");
   };
   render() {
     let url = this.props.match.url;
