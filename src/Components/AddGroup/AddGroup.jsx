@@ -1,6 +1,6 @@
 import React from "react";
-import "../../sass/styles.scss";
 import { Link } from "react-router-dom";
+import "../../sass/styles.scss";
 import AddGroupCounter from "./AddGroupCounter";
 
 class AddGroup extends React.Component {
@@ -16,6 +16,7 @@ class AddGroup extends React.Component {
     this.setState({
       nameOfGroup: e.target.value,
     });
+    console.log("Helllo===nice====");
   };
 
   updateGroupInfo = (e) => {
