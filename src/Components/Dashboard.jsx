@@ -17,7 +17,6 @@ class Dashboard extends React.Component {
       clickedGroup: clickedGroup,
       clickedIndx: clickedIndx,
     });
-    console.log("Hello====");
   };
 
   render() {
@@ -47,7 +46,7 @@ class Dashboard extends React.Component {
         ></Route>
         <div className="footer">
           <Link className="addBillBtn" to="/split">
-            Add your bills
+            Add your billssss
           </Link>
         </div>
       </div>
