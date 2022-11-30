@@ -1,8 +1,8 @@
 import React from "react";
+import { Link, Route } from "react-router-dom";
 import "../sass/styles.scss";
-import { Route, Link } from "react-router-dom";
-import Groups from "./Group/Groups.jsx";
 import Group from "./Group/Group.jsx";
+import Groups from "./Group/Groups.jsx";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -45,7 +45,7 @@ class Dashboard extends React.Component {
         ></Route>
         <div className="footer">
           <Link className="addBillBtn" to="/split">
-            Add your bills
+            Add your billssss
           </Link>
         </div>
       </div>
