@@ -1,8 +1,8 @@
 import React from "react";
+import { Link, Route } from "react-router-dom";
 import "../sass/styles.scss";
-import { Route, Link } from "react-router-dom";
-import Groups from "./Group/Groups.jsx";
 import Group from "./Group/Group.jsx";
+import Groups from "./Group/Groups.jsx";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -17,6 +17,7 @@ class Dashboard extends React.Component {
       clickedGroup: clickedGroup,
       clickedIndx: clickedIndx,
     });
+    console.log("Hello");
   };
   render() {
     let url = this.props.match.url;
