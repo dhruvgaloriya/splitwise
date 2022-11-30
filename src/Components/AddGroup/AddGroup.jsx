@@ -1,6 +1,6 @@
 import React from "react";
-import "../../sass/styles.scss";
 import { Link } from "react-router-dom";
+import "../../sass/styles.scss";
 import AddGroupCounter from "./AddGroupCounter";
 
 class AddGroup extends React.Component {
@@ -35,6 +35,9 @@ class AddGroup extends React.Component {
     return (
       <div className="addGroup">
         <div className="menu">
+          <div className="da" role="button" tabIndex={-1}>
+            Button
+          </div>
           <h1>Add group</h1>
           <Link className="exitBtn" to="/">
             Home
