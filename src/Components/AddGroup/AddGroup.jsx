@@ -40,6 +40,7 @@ class AddGroup extends React.Component {
           <Link className="exitBtn" to="/">
             Home
           </Link>
+          <img src="httpss//facebook.com" />
           <Link className="addGroupBtn" to="/setting">
             Setting
           </Link>
